@@ -6,7 +6,6 @@ import { getMainnetURI } from "./helpers";
 import { DEFAULD_NETWORK } from "../../constants";
 import { Networks } from "../../constants";
 import { messages } from "../../constants/messages";
-import { useDispatch } from "react-redux";
 import { swithNetwork } from "../../helpers/switch-network";
 
 type onChainProvider = {
@@ -46,8 +45,6 @@ export const useAddress = () => {
 };
 
 export const Web3ContextProvider: React.FC<{ children: ReactElement }> = ({ children }) => {
-    const dispatch = useDispatch();
-
     const [connected, setConnected] = useState(false);
     const [chainID, setChainID] = useState(DEFAULD_NETWORK);
     const [providerChainID, setProviderChainID] = useState(DEFAULD_NETWORK);

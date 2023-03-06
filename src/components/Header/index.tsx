@@ -10,7 +10,6 @@ import { makeStyles } from "@mui/styles";
 import LeftIndentIcon from "../../assets/icons/leftindent.svg";
 import RightIndentIcon from "../../assets/icons/rightindent.svg";
 
-import { useNavigate } from "react-router-dom";
 import useResponsive from "../../hooks/useResponsive";
 import ConnectMenu from './connect-button'
 
@@ -67,7 +66,6 @@ interface IMenuBoard {
 function Header({ mobileOpen, handleDrawerToggle }: IHeader) { 
   const isDesktop = useResponsive("up", "md");
   const classes = useStyles();
-  let navigate = useNavigate();   
 
   return (
     <AppBar position="fixed" className={classes.appBar} elevation={0}>
@@ -84,7 +82,7 @@ function Header({ mobileOpen, handleDrawerToggle }: IHeader) {
           sx={{
             display: "flex",
             flexGrow: "1",
-            justifyContent: "left",
+            justifyContent: "right",
             alignItems: "center",
           }}
         >          
@@ -94,6 +92,7 @@ function Header({ mobileOpen, handleDrawerToggle }: IHeader) {
               sx={{
                 fontFamily: "Montserrat Bold",
                 fontSize: "24px",
+                mr: '20px',
               }}
             >
               Campbell

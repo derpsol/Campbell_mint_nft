@@ -1,30 +1,24 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
+import { Route, Switch, HashRouter } from "react-router-dom";
 
 import { Home, PendingMotion, ViewBase } from "./views";
+import { Web3ContextProvider } from "./hooks";
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route
-          path="/pending"
-          element={
-            <ViewBase>
+    <Web3ContextProvider>
+      <HashRouter>
+        <ViewBase>
+          <Switch>
+            <Route path="/pending">
               <PendingMotion />
-            </ViewBase>
-          }
-        />
-        <Route
-          path="/"
-          element={
-            <ViewBase>
+            </Route>
+            <Route path="/">
               <Home />
-            </ViewBase>
-          }
-        />
-      </Routes>
-    </>
+            </Route>
+          </Switch>
+        </ViewBase>
+      </HashRouter>
+    </Web3ContextProvider>
   );
 }
 
