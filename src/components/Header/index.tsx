@@ -1,23 +1,18 @@
-import { useContext, useEffect, useState } from "react";
 import {
   AppBar,
   Box,
   Toolbar,
   IconButton,
-  Link,
-  useMediaQuery,
-  useTheme,
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-
-import { NavLink } from "react-router-dom";
 
 import LeftIndentIcon from "../../assets/icons/leftindent.svg";
 import RightIndentIcon from "../../assets/icons/rightindent.svg";
 
 import { useNavigate } from "react-router-dom";
 import useResponsive from "../../hooks/useResponsive";
+import ConnectMenu from './connect-button'
 
 const useStyles = makeStyles({
   appBar: {
@@ -89,18 +84,10 @@ function Header({ mobileOpen, handleDrawerToggle }: IHeader) {
           sx={{
             display: "flex",
             flexGrow: "1",
-            justifyContent: "space-between",
+            justifyContent: "left",
             alignItems: "center",
           }}
         >          
-          <Box
-            sx={{
-              display: isDesktop ? "flex" : "none",
-              justifyContent: "space-between",
-              width: "300px",
-            }}
-          >            
-          </Box>
           {isDesktop && (
             <Typography
               className={classes.titleText}
@@ -111,7 +98,8 @@ function Header({ mobileOpen, handleDrawerToggle }: IHeader) {
             >
               Campbell
             </Typography>
-          )}          
+          )}
+          <ConnectMenu/>
         </Box>
       </Toolbar>
     </AppBar>
