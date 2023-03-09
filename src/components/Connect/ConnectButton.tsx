@@ -4,7 +4,7 @@ import ImageOptimism from 'assets/images/optimism.png'
 import PillButton, {
     PillButtonFace,
     PillIcon,
-} from 'components/Button/PillButton'
+} from '../Button/PillButton'
 import css from './ConnectButton.module.scss'
 
 const Connect = () => {
