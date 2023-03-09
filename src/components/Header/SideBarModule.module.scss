@@ -1,0 +1,134 @@
+@import '../Button/variables.scss';
+
+.dropdown {
+    svg {
+        margin-left: 8px;
+        font-size: 10px;
+    }
+}
+
+.connect {
+    flex-shrink: 0;
+    padding: 0px 10px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    &::after {
+        content: '';
+        bottom: -1px;
+        left: 0px;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: yellow;
+        background: linear-gradient(90deg, rgba(255, 29, 54, 0.35) 0%, rgba(255, 148, 51, 0.35) 26.04%, rgba(241, 220, 0, 0.35) 52.08%, rgba(1, 178, 111, 0.35) 76.56%, rgba(8, 80, 209, 0.35) 100%);
+    }
+
+    .thumbnailRound {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        background: red;
+        color: white;
+        height: 20px;
+        border-radius: 50%;
+    }
+
+    .wallet {
+        display: flex;
+        align-items: center;
+        @include text-xs;
+
+        img {
+            margin-right: 8px;
+        }
+    }
+
+    .network {
+        align-items: flex-start;
+    }
+}
+
+.assets {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    border-bottom: 1px solid $gray-700;
+}
+
+.lps {
+    border-bottom: 1px solid $gray-700;
+}
+
+.bottomAligned {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.rewards {
+    flex-shrink: 0;
+    border-bottom: 1px solid $gray-800;
+    padding: 0px 10px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    >* {
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+
+        &:first-child {
+            margin-top: 0px;
+        }
+
+        svg {
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+    .rewardsRow {
+        display: flex;
+        justify-content: space-between;
+
+        .amount {
+            @include text-xs;
+            color: $color-gray;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        .rewardText {
+            color: white;
+          }
+
+        .rewardText:hover {
+            color: $blue-600;
+        }
+    }
+
+    .text {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-left: 0.5em;
+            margin-right: 0.7em;
+        }
+
+        .arrow {
+            font-size: 12px;
+        }
+    }
+}

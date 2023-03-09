@@ -1,6 +1,6 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import AddressTmp from 'assets/images/address-tmp.png'
-import ImageOptimism from 'assets/images/optimism.png'
+import AddressTmp from '../../assets/imgs/address-tmp.png'
+import ImageOptimism from '../../assets/imgs/optimism.png'
 import PillButton, {
     PillButtonFace,
     PillIcon,

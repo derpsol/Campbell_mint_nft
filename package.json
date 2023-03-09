@@ -24,6 +24,7 @@
     "anchor-link-browser-transport": "^3.5.1",
     "classnames": "^2.3.2",
     "eosjs": "^22.1.0",
+    "ethers": "^5",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "react": "17.0.0",
     "react-app-rewired": "^2.2.1",
@@ -35,6 +36,7 @@
     "sass": "^1.58.0",
     "styled-components": "^5.3.8",
     "typescript": "^4.4.2",
+    "wagmi": "^0.12.1",
     "web-vitals": "^2.1.0",
     "web3modal": "^1.9.12"
   },
@@ -61,5 +63,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }
