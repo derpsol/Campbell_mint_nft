@@ -12,6 +12,8 @@ import RightIndentIcon from "../../assets/icons/rightindent.svg";
 
 import useResponsive from "../../hooks/useResponsive";
 import ConnectMenu from './connect-button'
+import connectButton from "../Connect/ConnectButton";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const useStyles = makeStyles({
   appBar: {
@@ -98,7 +100,7 @@ function Header({ mobileOpen, handleDrawerToggle }: IHeader) {
               Campbell
             </Typography>
           )}
-          <ConnectMenu/>
+          <ConnectButton/>
         </Box>
       </Toolbar>
     </AppBar>
