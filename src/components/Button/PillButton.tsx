@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react'
 import classNames from 'classnames'
-import DownArrow from 'assets/icons/arrow-down.svg'
-import ChevronDown from 'assets/icons/chevron-down.svg'
+import DownArrow from '../../assets/icons/arrow-down.svg'
+import ChevronDown from '../../assets/icons/chevron-down.svg'
 import Loader from '../Loader'
 import css from './PillButton.module.scss'
 
