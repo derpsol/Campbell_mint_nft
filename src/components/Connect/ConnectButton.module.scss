@@ -1,8 +1,19 @@
 .accountOptions {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   .profileImage {
     margin-right: 8px;
+  }
+  .accountBtn {
+    margin-right: 12px;
+    border-radius: 12px;
+  }
+  .networkIcon {
+    border-radius: 12px;
+    padding: 8px;
+  }
+  .networkIcon img {
+    width: 24px;
+    height: 24px;
   }
 }
