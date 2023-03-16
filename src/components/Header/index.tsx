@@ -1,13 +1,24 @@
-import { AppBar, Box, Toolbar, IconButton, Typography } from "@mui/material";
+import { useContext, useEffect, useState } from "react";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Link,
+  useMediaQuery,
+  useTheme,
+  Typography,
+} from "@mui/material";
 import { makeStyles } from "@mui/styles";
+
+import { NavLink } from "react-router-dom";
 
 import LeftIndentIcon from "../../assets/icons/leftindent.svg";
 import RightIndentIcon from "../../assets/icons/rightindent.svg";
 
+import { useNavigate } from "react-router-dom";
 import useResponsive from "../../hooks/useResponsive";
-import ConnectMenu from "./connect-button";
 import Connect from "../Connect/ConnectButton";
-import css from './SideBarModule.module.scss'
 
 const useStyles = makeStyles({
   appBar: {
@@ -15,7 +26,8 @@ const useStyles = makeStyles({
     alignItems: "flex-start",
     paddingLeft: "16px",
     paddingRight: "16px",
-    background: "#222222 !important",
+    background:
+      "#222222 !important",
     backdropFilter: "none",
     zIndex: "1300!important",
   },
@@ -57,9 +69,11 @@ interface IMenuBoard {
   color: string;
 }
 
-function Header({ mobileOpen, handleDrawerToggle }: IHeader) {
+
+function Header({ mobileOpen, handleDrawerToggle }: IHeader) { 
   const isDesktop = useResponsive("up", "md");
   const classes = useStyles();
+  let navigate = useNavigate();   
 
   return (
     <AppBar position="fixed" className={classes.appBar} elevation={0}>
@@ -86,15 +100,13 @@ function Header({ mobileOpen, handleDrawerToggle }: IHeader) {
               sx={{
                 fontFamily: "Montserrat Bold",
                 fontSize: "24px",
-                mr: "20px",
+                mr: '24px',
               }}
             >
               Campbell
             </Typography>
           )}
-          <div className={css.connect}>
-            <Connect />
-          </div>
+          <Connect />
         </Box>
       </Toolbar>
     </AppBar>

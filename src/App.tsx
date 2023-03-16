@@ -1,23 +1,23 @@
-import { Route, Switch, HashRouter } from "react-router-dom";
-import { RecoilRoot } from "recoil";
-import { merge } from "lodash";
-
-import { Home, PendingMotion, ViewBase } from "./views";
-import { Web3ContextProvider } from "./hooks";
-
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import { WagmiConfig, configureChains, createClient } from "wagmi";
+import { alchemyProvider } from "wagmi/providers/alchemy";
+import "@rainbow-me/rainbowkit/styles.css";
 import {
   RainbowKitProvider,
   Theme,
   darkTheme,
   getDefaultWallets,
 } from "@rainbow-me/rainbowkit";
-import { WagmiConfig, configureChains, createClient } from "wagmi";
-import { alchemyProvider } from "wagmi/providers/alchemy";
+import { ALCHEMY_ID, OPTIMISM_CHAIN, GOERLI_CHAIN } from "./constants/constants";
 import { publicProvider } from "wagmi/providers/public";
-import { ALCHEMY_ID, OPTIMISM_CHAIN } from "./constants/constants";
+import { merge } from "lodash";
+import { RecoilRoot } from "recoil";
+
+import { Home, PendingMotion, ViewBase } from "./views";
 
 const { chains, provider } = configureChains(
-  [OPTIMISM_CHAIN],
+  [GOERLI_CHAIN],
   [alchemyProvider({ apiKey: ALCHEMY_ID }), publicProvider()]
 );
 
@@ -43,20 +43,24 @@ function App() {
     <RecoilRoot>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider theme={myTheme} chains={chains}>
-          <Web3ContextProvider>
-            <HashRouter>
-              <ViewBase>
-                <Switch>
-                  <Route path="/pending">
-                    <PendingMotion />
-                  </Route>
-                  <Route path="/">
-                    <Home />
-                  </Route>
-                </Switch>
-              </ViewBase>
-            </HashRouter>
-          </Web3ContextProvider>
+          <Routes>
+            <Route
+              path="/pending"
+              element={
+                <ViewBase>
+                  <PendingMotion />
+                </ViewBase>
+              }
+            />
+            <Route
+              path="/"
+              element={
+                <ViewBase>
+                  <Home />
+                </ViewBase>
+              }
+            />
+          </Routes>
         </RainbowKitProvider>
       </WagmiConfig>
     </RecoilRoot>

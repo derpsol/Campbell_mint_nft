@@ -1,12 +1,12 @@
 import { Chain } from '@rainbow-me/rainbowkit'
-import { chain } from "wagmi"
-import ImageOptimism from 'assets/images/optimism.png'
+import { chain } from 'wagmi'
+import ImageOptimism from '../assets/imgs/optimism.png'
 import { SupportedChainId } from './enums'
 
 // Addresses
 
 // This is Component Fi's public address for delegating transactions and receiving rewards on Perp
-export const VITE_DELEGATE_ADDRESS = import.meta.env.VITE_DELEGATE_ADDRESS
+export const VITE_DELEGATE_ADDRESS = process.env.VITE_DELEGATE_ADDRESS
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 
@@ -28,26 +28,26 @@ export const SECONDS_IN_AN_HOUR = 3600
 
 export const DEFAULT_USER_INVESTMENT = 100
 
-export const DEFAULT_CHAIN = SupportedChainId.OPTIMISM
+export const DEFAULT_CHAIN = SupportedChainId.OPTIMISM_GOERLI
 
 // Environment constants
 
-export const ALCHEMY_ID = import.meta.env.VITE_ALCHEMY_ID
+export const ALCHEMY_ID = process.env.VITE_ALCHEMY_ID
 
-export const PERP_API_KEY = import.meta.env.VITE_PERP_CANDLESTICK_API_KEY
+export const PERP_API_KEY = process.env.VITE_PERP_CANDLESTICK_API_KEY
 
-export const IP_INFO_API_KEY = import.meta.env.VITE_IP_INFO_API_KEY
+export const IP_INFO_API_KEY = process.env.VITE_IP_INFO_API_KEY
 
-export const PERP_MARKET_REWARDS_API_KEY = import.meta.env
+export const PERP_MARKET_REWARDS_API_KEY = process.env
     .VITE_PERP_MARKET_REWARDS_API_KEY
 
-export const ENVIRONMENT = import.meta.env.VITE_ENVIRONMENT
+export const ENVIRONMENT = process.env.VITE_ENVIRONMENT
 
-export const ENV_IS_DEV = import.meta.env.DEV
+export const ENV_IS_DEV = process.env.DEV
 
-export const ENV_IS_PROD = import.meta.env.PROD
+export const ENV_IS_PROD = process.env.PROD
 
-export const MODE = import.meta.env.MODE
+export const MODE = process.env.MODE
 
 export const IS_LOCAL_CHAIN = MODE === 'LOCAL_CHAIN'
 
@@ -77,6 +77,7 @@ export const LOCAL: Chain = {
 // Note Perp is not currently available on any testnet
 // Local chain testing is used for testing contract interactions but data fetched from live subgraphs
 export const OPTIMISM_CHAIN = IS_LOCAL_CHAIN ? LOCAL : chain.optimism
+export const GOERLI_CHAIN = IS_LOCAL_CHAIN ? LOCAL : chain.goerli
 
 export const USDC_ADDRESS = {
     [SupportedChainId.LOCAL]: {

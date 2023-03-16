@@ -1,9 +1,9 @@
-import { FC, ReactNode } from 'react'
-import classNames from 'classnames'
-import DownArrow from '../../assets/icons/arrow-down.svg'
-import ChevronDown from '../../assets/icons/chevron-down.svg'
-import Loader from '../Loader'
-import css from './PillButton.module.scss'
+import { FC, ReactNode } from 'react';
+import classNames from 'classnames';
+import DownArrow from '../../assets/icons/arrow-down.svg';
+// import ChevronDown from '../../assets/icons/chevron-down.svg';
+import Loader from '../../components/Loader';
+import css from './PillButton.module.scss';
 
 export enum PillIcon {
     UP = 'UP',
@@ -57,7 +57,8 @@ const PillButton: FC<PillButtonProps> = ({
     const renderIcon = () => {
         switch (icon) {
         case PillIcon.DOWN:
-            return <ChevronDown />
+            return ''
+            // return <ChevronDown />
         case PillIcon.ARROW_DOWN:
             return <DownArrow />
         default:
