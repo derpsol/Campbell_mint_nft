@@ -39,6 +39,7 @@ const Connect = () => {
                     isFullWidth
                     disabled={!mounted}
                     onClick={openConnectModal}
+                    className={css.connetWallet}
                   >
                     Connect Wallet
                   </PillButton>
